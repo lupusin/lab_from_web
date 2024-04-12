@@ -1,3 +1,17 @@
+div {
+   color: rgb(54, 54, 182); 
+}
+div.menu {
+    border: 5px solid rgb(40, 114, 197);
+    border-radius: 5px;
+    width: 300px;
+    margin: auto;
+
+}
+div.menu:hover{
+    background-color: rgb(22, 115, 143);
+    box-shadow: 0 0 15px grey;
+}
 body {
     background-color: lightblue;
     color: maroon;
@@ -15,16 +29,16 @@ a{
     color: green;
     transition: 1s;
 }
-a:hover{
+a:hover {
     color: blue;
     text-decoration: underline;
     transition: 0.3s;
 }
 
-a:active{
+a:active {
     color: black;
     opacity: 0.3;
 }
-a:link{
+a:link {
     color: aqua;
 }
