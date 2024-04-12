@@ -1,3 +1,6 @@
+main{
+    margin: 10px 20px 45px;
+}
 div {
    color: rgb(54, 54, 182); 
 }
@@ -21,6 +24,10 @@ body {
 footer {
     background-color: green;
     color: maroon;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 
     
 }
