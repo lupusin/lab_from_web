@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лапшин Егор Вячеславович. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon-32x32.png" type="image/png" >
+    <link rel="shortcut icon" href="../favicon-16x16.png" type="image/png">
+    <style>
+    img{
+        max-width: 400px;
+        height: 450px;
+        position: relative;
+        right: -360px;
+        min-width: 400px;
+        border: none;
+    }
+    div {
+        width: 300px;
+        height: 150px;
+        background-color: rgb(151, 8, 87);
+        color: white;
+        padding: 50px;
+        text-align: center;
+        font-size: 30px;
+        justify-content: center;
+        margin: 0 auto;
+        align-items: center;
+    }
+    </style>    
+    <script>
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wearImg = document.getElementById('wear');
+
+            if (color === 'Синий' && type === 'Худи') {
+                wearImg.src = 'blueh.jpg';
+            } 
+
+            else if (color === 'Черный' && type === 'Худи') {
+                wearImg.src = 'blackh.jpg';
+            } 
+            else if (color === 'Фиолетовый' && type === 'Худи') {
+                wearImg.src = 'violeth.jpg';
+            } 
+            else if (color === 'Синий' && type === 'Штаны') {
+                wearImg.src = 'bluep.jpg';
+            } 
+            else if (color === 'Черный' && type === 'Штаны') {
+                wearImg.src = 'violetp.jpg';
+            }
+            else if (color === 'Фиолетовый' && type === 'Штаны') {
+                wearImg.src = 'blackp.jpg';
+            }
+            else if (color === 'Синий' && type === 'Свитер') {
+                wearImg.src = 'blues.jpg';
+            }
+            else if (color === 'Черный' && type === 'Свитер') {
+                wearImg.src = 'blacks.jpg';
+            }
+            else if (color === 'Фиолетовый' && type === 'Свитер') {
+                wearImg.src = 'violets.jpg';
+            }
+            else {
+                
+            }
+
+            
+        }
+    
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div>
+            <select id="wear-color">
+                <option value="">Выберите цвет</option>
+                <option value="Фиолетовый">Фиолетовый</option>
+                <option value="Синий">Синий</option>
+                <option value="Черный">Черный</option>
+            </select><br>
+
+            <select id="wear-type">
+                <option value="">Выберите тип одежды</option>
+                <option value="Худи">Худи</option>
+                <option value="Штаны">Штаны</option>
+                <option value="Свитер">Свитер</option>
+            </select><br>
+
+            <button onclick="filter()">OK</button><br>
+
+            
+        </div>
+        <img id="wear">
+    </main>
+
+    <footer>
+        © Лапшин Егор, ФБИ-23, 2 курс, 2024
+    </footer>
+
+
+</body></html>
