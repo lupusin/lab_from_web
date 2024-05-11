@@ -18,6 +18,20 @@
             newBlock.style.borderBlockStyle= 'solid'
             document.querySelector('main').appendChild(newBlock);
         }
+        function addNewBlocks(){
+            let main = document.querySelector('main')
+            for(let i = 0; i<10; i++){
+                let newBlocks = document.createElement('div');
+                newBlocks.style.backgroundColor = 'green';
+                newBlocks.style.height = '40px';
+                newBlocks.style.borderBlockColor = 'black'
+                newBlocks.style.borderRadius = '10px'
+                newBlocks.style.borderBlockStyle= 'solid'
+                newBlocks.innerText = 'Блок #' + (i+1);
+
+                main.appendChild(newBlocks);
+            }
+        }
     </script>
 </head>
 <body>
@@ -26,6 +40,7 @@
     </header>
     <main>
         <button onclick="addNewBlock()">Добавление блока</button>
+        <button onclick="addNewBlocks()">Добавление блоков</button>
     </main>
 </body>
 <footer>
