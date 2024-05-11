@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лапшин Егор Вячеславович. Лабороторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon-32x32.png" type="image/png" >
+    <link rel="shortcut icon" href="../favicon-16x16.png" type="image/png">
+    <script>
+        function addNewBlock() {
+            let newBlock = document.createElement('div');
+            newBlock.style.backgroundColor = 'green';
+            newBlock.style.height = '40px';
+            newBlock.style.borderBlockColor = 'black'
+            newBlock.style.borderRadius = '10px'
+            newBlock.style.borderBlockStyle= 'solid'
+            document.querySelector('main').appendChild(newBlock);
+        }
+    </script>
+</head>
+<body>
+    <header>
+    НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <main>
+        <button onclick="addNewBlock()">Добавление блока</button>
+    </main>
+</body>
+<footer>
+    &copy: Егор Лапшин, ФБИ-23, 2 курс, 2024
+</footer>
+</html>
