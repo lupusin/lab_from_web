@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0057)https://mariakhmeleva.github.io/web-labs/lab6/random.html -->
 <html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,13 +10,13 @@
     .help-block {
             margin-top: 20px;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #680b0b;
             border-radius: 5px;
         }
 
         .help-block button {
             padding: 5px 10px;
-            background-color: #4CAF50;
+            background-color: #111f96;
             color: white;
             border: none;
             border-radius: 4px;
@@ -62,10 +61,10 @@
     }
     function again(params) {
         let screens = document.getElementsByClassName('game');
-        screens[2].style.display = 'none'; // Скрываем третий экран
-        screens[1].style.display = 'block'; // Показываем второй экран
-        startGame(); // Загадываем новое число и обнуляем счетчик попыток
-        document.getElementById('result').innerHTML = ''; // Очищаем блок "result"
+        screens[2].style.display = 'none'; 
+        screens[1].style.display = 'block'; 
+        startGame(); 
+        document.getElementById('result').innerHTML = ''; 
         
     }
 
