@@ -8,39 +8,143 @@
     <link rel="stylesheet" href="../main.css">
     <link rel="shortcut icon" href="../favicon-32x32.png" type="image/png" >
     <link rel="shortcut icon" href="../favicon-16x16.png" type="image/png">
-    <script>
-        function addNewBlock() {
-            let newBlock = document.createElement('div');
-            newBlock.style.backgroundColor = 'green';
-            newBlock.style.height = '40px';
-            newBlock.style.borderBlockColor = 'black'
-            newBlock.style.borderRadius = '10px'
-            newBlock.style.borderBlockStyle= 'solid'
-            document.querySelector('main').appendChild(newBlock);
-        }
-        function addNewBlocks(){
-            let main = document.querySelector('main')
-            for(let i = 0; i<10; i++){
-                let newBlocks = document.createElement('div');
-                newBlocks.style.backgroundColor = 'green';
-                newBlocks.style.height = '40px';
-                newBlocks.style.borderBlockColor = 'black'
-                newBlocks.style.borderRadius = '10px'
-                newBlocks.style.borderBlockStyle= 'solid'
-                newBlocks.innerText = 'Блок #' + (i+1);
+    <style>
+    .circle-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-                main.appendChild(newBlocks);
-            }
+    .circle {
+        width: 40px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgb(105, 13, 49);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 9px;
+    }
+    .opacity-block {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(28, 14, 153);
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            color: rgb(252, 253, 254);
+    }
+    .col1 {
+        background-color: rgb(182, 54, 233);
+        color: rgb(2, 2, 2);
+    }
+
+    .col2 {
+        background-color: rgb(8, 100, 62);
+        color: white;
+    }
+</style><script>
+    function addNewBlock() {
+        let newBlock = document.createElement('div');
+        newBlock.style.backgroundColor = 'blue';
+        newBlock.style.height = '60px';
+        newBlock.style.width = '90px';
+        newBlock.style.border = '1px solid red';
+        newBlock.style.margin = '20px';
+        document.querySelector('main').appendChild(newBlock);
+    }
+    function addNewBlocks() {
+        let main = document.querySelector('main');
+        let blocksCount = document.getElementById('blocksCount').value;
+        let initialWidth = 100; 
+        let widthIncrement = 30;
+        for (let i = 0; i < blocksCount; i++) {
+            let newBlock = document.createElement('div');
+            newBlock.style.backgroundColor = 'pink';
+            newBlock.style.height = '40px';
+            newBlock.style.width = `${initialWidth + i * widthIncrement}px`;
+            newBlock.style.border = '1px solid blue';
+            newBlock.style.margin = '20px'
+            newBlock.innerHTML = `Блок № ${i + 1}: 2*${i}<sup>2</sup> = ${2 * i ** 2}`;
+            main.appendChild(newBlock);
         }
-    </script>
-</head>
+    }
+    function add20_50() {
+        let main = document.querySelector('main');
+        for (let i = 20; i <= 50; i += 2.5) {
+            let newBlock = document.createElement('div');
+            newBlock.style.width = '40px';
+            newBlock.style.border = '1px solid blue';
+            newBlock.style.backgroundColor = 'beige';
+            newBlock.style.margin = '10px';
+            newBlock.style.height = '20px';
+
+            newBlock.innerHTML = `${i}`;
+
+            main.appendChild(newBlock);
+        }
+    }
+    function add10_80() {
+        let main = document.querySelector('main');
+        let circleContainer = document.createElement('div');
+        circleContainer.classList.add('circle-container');
+
+        for (let i = 10; i >= -80; i -= 3) {
+            let circle = document.createElement('div');
+            circle.classList.add('circle');
+            circle.textContent = i;
+            circleContainer.appendChild(circle);
+        }
+
+        main.appendChild(circleContainer);
+    }
+    function addOpacityBlocks() {
+        let main = document.querySelector('main');
+        let opacityStep = 0.1;
+
+        for (let i = 1; i <= 10; i++) {
+            let block = document.createElement('div');
+            block.classList.add('opacity-block');
+            block.style.opacity = opacityStep * i;
+            block.textContent = i;
+            main.appendChild(block);
+        }
+    }
+    function addColoredCircles() {
+        let main = document.querySelector('main');
+        let circleContainer = document.createElement('div');
+        circleContainer.classList.add('circle-container');
+        let circlesCount = document.getElementById('circlesCount').value;
+        for (let i = circlesCount; i > 0; i--) {
+            let circle = document.createElement('div');
+            circle.classList.add('circle');
+            if (i % 2 === 0) {
+                circle.classList.add('col1');
+            } else {
+                circle.classList.add('col2');
+            }
+            circle.textContent = i;
+            circleContainer.appendChild(circle);
+        }
+        main.appendChild(circleContainer);
+    }
+</script></head>
+
+
 <body>
     <header>
-    НГТУ, ФБ, Лабораторная работа 7
+        НГТУ, ФБ, Лабораторная работа 7
     </header>
     <main>
-        <button onclick="addNewBlock()">Добавление блока</button>
-        <button onclick="addNewBlocks()">Добавление блоков</button>
+        <button onclick="addNewBlock()">Добавить блок</button>
+        <input type="number" id="blocksCount" placeholder="Количество блоков">
+        <button onclick="addNewBlocks()">Добавить блоки</button>
+        <button onclick="add20_50()">20=&gt;50</button>
+        <button onclick="add10_80()">10 =&gt; -80</button>
+        <button onclick="addOpacityBlocks()">Добавить блоки с opacity</button> 
+        <input type="number" id="circlesCount" placeholder="Количество кругов">
+        <button onclick="addColoredCircles()">Цветные круги (краный/черный)</button>
     </main>
 </body>
 <footer>
